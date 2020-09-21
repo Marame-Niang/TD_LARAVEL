@@ -6,28 +6,45 @@ use Illuminate\Http\Request;
 
 class ClientNonSalarieController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+
     public function add()
     {
-      return view('clientNonSalarie.add');
+      return redirect('/clientnonSalarie/add');
     }
 
     public function getAll()
     {
       // $liste_clientNS = ClientNonSalarie::all();
       $liste_clientNS = ClientNonSalarie::paginate(5);
-      return view('clientNonSalarie.liste',['liste_clientNS'=>$liste_clientNS] );
+      return redirect('/clientnonSalarie/getAll')->with(['liste_clientNS'=>$liste_clientNS]);
     } 
 
     public function edit($id)
     {
-      var_dump($id);
-      die;
-      return view("clientNonSalarie.edit");
+      // var_dump($id);
+      // die;
+      $clientns = ClientNonSalarie::find($id);
+      return redirect("/clientnonSalarie/edit")->with(['clientNS' => $clientns]);
     }
 
-    public function update()
+    public function update(Request $request)
     {
-      return $this->getAll();
+      $clientns = ClientNonSalarie::find($request->id);
+      $clientns->cni = $request->cni;
+      $clientns->matricule = $this->codeAleatoire(8);
+      $clientns->prenom = $request->prenom;
+      $clientns->nom = $request->nom;
+      $clientns->sexe = $request->sexe;
+      $clientns->datenaiss = $request->datenaiss;
+      $clientns->adresse = $request->adresse;
+      $clientns->telephone = $request->telephone;
+      $clientns->email = $request->email;
+      $clientns = $nonsalarie->save();
+      return redirect('/clientnonSalarie/getAll');
     }
 
     public function delete($id)
@@ -55,7 +72,7 @@ class ClientNonSalarieController extends Controller
       $nonsalarie->email = $request->email;
       $resultat = $nonsalarie->save();
       // echo $resultat;
-      return view('clientNonSalarie.add', ['confirmation' =>$resultat]);
+      return redirect('/clientnonSalarie/add')->with(['confirmation' =>$resultat]);
     }
 
     function codeAleatoire($car)

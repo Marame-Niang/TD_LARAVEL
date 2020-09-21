@@ -35,7 +35,7 @@
                               <td>{{ $clientNS->telephone}}</td>
                               <td>{{ $clientNS->email}}</td>
                               <td><a href="{{ route('editclientnonsalarie', ['id'=>$clientNS->id]) }}"> Editer </a> </td>
-                              <td><a href="{{ route('deleteclientnonsalarie', ['id=>$clientNS->id']) }}"> Supprimer </a> </td>
+                              <td><a href="{{ route('deleteclientnonsalarie', ['id'=>$clientNS->id]) }}" onlick="return confirm('Voulez-vous supprimer ?');"> Supprimer </a> </td>
 
                           </tr>
                       @endforeach

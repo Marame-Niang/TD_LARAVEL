@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompteSimple extends Model
 {
-    protected $fillable = array('client_non_salaries_id', 'client_salaries_id', 'entreprises_id', 'numero','rib','solde','dateOuverture','fraisOuverture', 'remuneration');
+    protected $fillable = array('client_non_salaries_id', 'client_salaries_id', 'entreprise_id', 'numero','rib','solde','dateOuverture','fraisOuverture', 'remuneration');
     public static $rules = array('client_non_salaries_id'=>'integer',
                                  'client_salaries_id'=>'integer',
-                                 'entreprises_id'=>'required|integer',
+                                 'entreprise_id'=>'required|integer',
                                  'numero'=>'required|min:2',
                                  'rib'=>'required|min:9',
                                  'solde'=>'required|min:5',

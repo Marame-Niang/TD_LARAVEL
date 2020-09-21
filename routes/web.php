@@ -53,6 +53,7 @@ Route::get('/compteSimple/edit/{$id}', 'CompteSimpleController@edit')->name('edi
 Route::get('/compteSimple/update', 'CompteSimpleController@update')->name('updatecomptesimple');
 Route::get('/compteSimple/delete/{$id}', 'CompteSimpleController@delete')->name('deletecomptesimple');
 Route::get('/compteSimple/getAll', 'CompteSimpleController@getAll')->name('getallcomptesimple');
+Route::post('/comptesimple/persist', 'CompteSimpleController@persist')->name('persistcomptesimple');
 
                     // Compte Courant
 

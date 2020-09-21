@@ -19,15 +19,15 @@
                   @csrf
                     <div class="form-group">
                         <label class="control-label" for="cni"> CNI </label>
-                        <input class="form-control" type="text" name="cni" id="cni"></input>
+                        <input class="form-control" type="text" name="cni" id="cni"/>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="prenom"> Prenom </label>
-                        <input class="form-control" type="text" name="prenom" id="prenom"></input>
+                        <input class="form-control" type="text" name="prenom" id="prenom"/>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="nom"> Nom </label>
-                        <input class="form-control" type="text" name="nom" id="nom"></input>
+                        <input class="form-control" type="text" name="nom" id="nom"/>
                     </div>
                     <div class="form-group">
                     <label class="control-label" for="sexe"> Sexe </label>
@@ -39,19 +39,19 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="datenaiss"> Date de naissance </label>
-                        <input class="form-control" type="date" name="datenaiss" id="datenaiss"></input>
+                        <input class="form-control" type="date" name="datenaiss" id="datenaiss"/>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="adresse"> Adresse </label>
-                        <input class="form-control" type="text" name="adresse" id="adresse"></input>
+                        <input class="form-control" type="text" name="adresse" id="adresse"/>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="telephone"> Telephone </label>
-                        <input class="form-control" type="text" name="telephone" id="telephone"></input>
+                        <input class="form-control" type="text" name="telephone" id="telephone"/>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="email"> Email </label>
-                        <input class="form-control" type="email" name="email" id="email"></input>
+                        <input class="form-control" type="email" name="email" id="email"/>
                     </div>
                     <div class="form-group">
                       <input class="btn btn-success" type="submit" name="envoyer" value="Envoyer"/>
